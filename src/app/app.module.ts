@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductSearchComponent } from './components/product-search/product-search.component';
 import { StarsComponent } from './components/stars/stars.component';
 import {ProductService} from "./shared/product.service";
+import {APP_BASE_HREF} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {ProductService} from "./shared/product.service";
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, {provide: APP_BASE_HREF, useValue: '/auction'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
